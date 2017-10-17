@@ -23,10 +23,10 @@ namespace DMPSeedSync
         void Update()
         {
             // Update the game seed
-			if (HighLogic.CurrentGame != null)
-			{
-				HighLogic.CurrentGame.Seed = Seed;
-			}
+            if (HighLogic.CurrentGame != null)
+            {
+                HighLogic.CurrentGame.Seed = Seed;
+            }
 
             // Don't run the code if the client already started
             if (started)
@@ -54,8 +54,7 @@ namespace DMPSeedSync
                     Debug.Log("[DMPSeedSync] Current Game is null!");
                     return;
                 }
-				HighLogic.CurrentGame.Seed = Seed;
-				Debug.Log("[DSS2] " + HighLogic.CurrentGame.Seed);
+                HighLogic.CurrentGame.Seed = Seed;
             }
         }
 
@@ -67,7 +66,6 @@ namespace DMPSeedSync
             try
             {
                 Seed = BitConverter.ToInt32(messageData, 0);
-                Debug.Log("[DSS] " + Seed);
             }
             catch (Exception)
             {

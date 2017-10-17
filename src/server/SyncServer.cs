@@ -26,13 +26,13 @@ namespace DMPSeedSync
             if (!File.Exists(path))
                 seedSettings.SaveSettings();
             seedSettings.LoadSettings();
-			String seed = seedSettings.Settings.seed?.Trim();
-			if (String.IsNullOrEmpty(seed))
+            String seed = seedSettings.Settings.seed?.Trim();
+            if (String.IsNullOrEmpty(seed))
                 throw new InvalidOperationException();
-			if (Int32.TryParse(seed, out Int32 iSeed))
-				Seed = iSeed;
-			else
-				Seed = seed.GetHashCode();
+            if (Int32.TryParse(seed, out Int32 iSeed))
+                Seed = iSeed;
+            else
+                Seed = seed.GetHashCode();
         }
 
         /// <summary>
